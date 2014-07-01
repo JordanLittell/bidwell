@@ -12,14 +12,14 @@
 	<br class="mobile">
 
 	<div class="container">
+		<h1>We <strong>are</strong> currently leasing units.</h1>
 		<div class="pannel">
-			<h1>We <strong>are</strong> currently leasing units.</h1>
-		</div>
-		<h1>Why Us?</h1>
-			<h1>With a U-Haul certification, A/C and C/C self-storage units, a modern security system, 
+			
+			<h1>Why Us?</h1>
+			<h3>With a U-Haul certification, A/C and C/C self-storage units, a modern security system, 
 			affordable pricing plans and a convenient location, Bidwell offers secure, convenient, and affordable storage.
-			We have clients ranging from pharmaceutical firms to college students. Whatever your storage needs are, we have you covered. </h1>
-
+			We have clients ranging from pharmaceutical firms to college students. Whatever your storage needs are, we have you covered. </h3>
+		</div>
 		<div class="pannel" id="main-pannel">
 				
 			<a href="#info" class="trigger"><img src="img/info.png" class="icon" ><br><span class="target">Info</span></a>

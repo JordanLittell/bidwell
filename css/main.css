@@ -861,9 +861,11 @@ footer{
     display: block;
   }
   #mobile-inline-text{
-  display: inline-block;
-}
-
+    display: inline-block;
+  }
+  #main-pannel{
+    display:none;
+  }
   .mobile-no{
     display:none;
   }

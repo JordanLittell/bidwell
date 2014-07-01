@@ -22,7 +22,7 @@
 			<div>			
 				<ul class="nav-list">
 					<a href="index.php"><li>Home</li></a>
-					<a href="pricing/"><li>Pricing</li></a>
+					<a href="pricing.php"><li>Pricing</li></a>
 				</ul>
 			</div>
 		</div>
