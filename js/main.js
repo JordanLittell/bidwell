@@ -82,6 +82,13 @@
     $(document).on('tapend',function(){
       $(".mobile-list").slideUp("slow");
     });
+    $(".button").click(function(event){
+      event.stopPropagation();
+      $(".mobile-list").slideDown("slow");
+    })
+    $(document).click(function(){
+      $(".mobile-list").slideUp("slow");
+    })
     
     //FETCH GOOGLE DATA WHEN REQUESTED BY USER
     $("#getMap").click(function(event){
