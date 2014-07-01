@@ -95,20 +95,34 @@
      
       $("#loading").removeClass("hidden").css('display','block');
       event.preventDefault();
-
       $.getScript("js/map.js", function(data,status,jqxhr){   
         //if status =200 proceed
         initialize();
         calcRoute();
         //if status !=200 don't proceed
-        console.log($("#map-canvas").children());       
-      });
+
+        console.log($("#map-canvas").children()); 
+        if( $('#map-canvas').css('display')=='hidden' || $('#directionsPanel').css('display')=='hidden'){
+
+      }      
+      })
+      
     });
     $(document).ajaxComplete(function(){
       $("#loading").css('display','none');
-      $("#direction-container").fadeIn('slow'); 
+      $("#direction-container").fadeIn('slow');
+      $("#location").css('background-color','#ACACAC') 
       console.log($("#map-canvas").children());
+      $("#getMap").hide();
+      $("#hideMap").show();
     });
+    $("#hideMap").click(function(){
+     
+      $(this).hide();
+      $("#location").css("background-color","white");
+      $("#getMap").show();
+      $("#direction-container").fadeOut('slow');
+    })
 
     
     

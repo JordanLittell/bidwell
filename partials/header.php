@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-
 	<body>
 		<div id="nav-bar" class="mobile-no">
 			<br>

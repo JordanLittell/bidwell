@@ -63,10 +63,13 @@
 			<img src="img/location.svg" class="feature-icon">
 			<h1>Location</h1>
 			<p>Need help driving to Bidwell Self Storage from your current location?
-				No problem.</p><br>
+				No problem.</p>
 				<button id="getMap" class="main-button">
 					Get Directions
 				</button>
+				<button id="hideMap" class="main-button hidden">Hide Map</button>
+				<br>
+				<br>
 				<div id="loading" class="hidden">
 					<img src="img/loading.gif">
 				</div>
@@ -74,6 +77,7 @@
 					<div id="map-canvas"></div><br>
 					<div id="directionsPanel"></div>
 				</div>
+				
 		</div>
 		<hr>
 

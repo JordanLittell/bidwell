@@ -708,6 +708,7 @@ a{
 
 
 
+
 /*MAIN STYLING=========================================
 =======================================================*/
 
@@ -790,10 +791,11 @@ iframe{
 
 #directionsPanel{
   height: 300px;
-  width:100%;
+  width:80%;
   overflow: scroll;
-  background-color: #F0F0F0;
+  background-color: white;
   border: 3px solid #ccc;
+  margin: 0 auto 0 auto;
 }
 #map-canvas {
   width:80%;
