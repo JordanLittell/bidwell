@@ -455,6 +455,15 @@ input[type="submit"] {
     -webkit-appearance: button; /* 2 */
     cursor: pointer; /* 3 */
     *overflow: visible;  /* 4 */
+    background-color: white;
+    border-radius: 4px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    border: 1px solid #ACACAC;
+    padding: 6px;
+}
+input[type="submit"]:hover{
+  background-color: #F0F0F0;
 }
 
 /**

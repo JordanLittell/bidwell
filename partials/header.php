@@ -37,7 +37,7 @@
 			<div id="mobile-nav">			
 				<ul class="mobile-list hidden">
 					<a href=<?php echo BASE_URL;?>><li>Home</li></a>
-					<a href="<?php echo BASE_URL;?>pricing.php"><li>Pricing</li></a>
+					<a href="<?php echo BASE_URL;?>pricing"><li>Pricing</li></a>
 				</ul>
 			</div>
 		</div>
