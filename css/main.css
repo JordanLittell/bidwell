@@ -716,7 +716,7 @@ a{
   margin: 0 5% 0 5%;
   padding-top: 8px;
 }
-.pannel{
+.pannel,section{
   width: 100%;
   background-color: ;
   text-align: center;
@@ -808,21 +808,21 @@ iframe{
 
 /*BUTTON STYLING*/
 .main-button{
-  background-color: #ccc;
-  opacity: 0.9;
-  border-radius: 4px;
-  border-color: white;
-  color:white;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #ACACAC;
+  color:#ACACAC;
   cursor: pointer;
-  height:40px;
+  height:60px;
   text-align: center;
   transition:background-color .9s ease .12s;
   -webkit-transition:background-color .9s ease .12s;
 }
 .main-button:hover{
-  background-color: white;
-  color:#189b97;
-  border: 3px solid #189b97;
+  background-color: #D0D0D0;
+  border-radius: 5px;
+  color:white;
+  border: 5px solid #ACACAC;
 }
 #phone{
   width: 100%;

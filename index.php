@@ -32,7 +32,7 @@
 
 		<div class="pannel" id="info">
 			<img src="img/info.png" class="feature-icon">
-			<h1>General Information</h1>
+			<h1>General Information</h1><br>
 			<img src = 'img/uhaul_logo.png' class="img-small">
 			<h3>Bidwell is now <strong>UHaul</strong> certified</h3><br>
 	  		<h3><strong>Address</strong></h3> 65 Heritage Lane Chico, CA 95926<br>
