@@ -1,4 +1,7 @@
-<?php include("inc/config.php");?>
+<?php 
+	define("BASE_URL","/bidwell3.0/");
+	define("ROOT_PATH",$_SERVER["DOCUMENT_ROOT"]."/bidwell3.0");
+	?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -29,7 +32,7 @@
 			</div>
 		</div>
 		<div id="nav-bar" class="mobile">
-			<div class="pull-right"><img src="img/menu-icon.png" class="menu-icon button"></div>
+			<div class="pull-right"><img src="<?php echo BASE_URL;?>img/menu-icon.png" class="menu-icon button"></div>
 			<br>
 			<div id="mobile-nav">			
 				<ul class="mobile-list hidden">
