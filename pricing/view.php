@@ -30,7 +30,7 @@
 	?>
 	<section>
 		<?php 
-	echo "We have no more units available in that size.";
+	echo "We have no more units available in that size. Call us if you have any questions";
 
 	}?>
 

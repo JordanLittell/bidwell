@@ -13,12 +13,5 @@ function get_data(){
 	}	catch(Exception $e){
 		return "could not connect to db";
 	}
-	try{
-		$results = $db->query("SELECT sUnitName,iFloor,dcWidth,dcLength,dcStdRate,dcStdWeeklyRate,bPower,bClimate,bAlarm,bRentable,bRented FROM UNITS");
-		$data = $results->fetchAll();
-	
-	}	catch(Exception $e){
-		return "could not query the database";
-	}
-	return $data;
+	return $db;
 }
