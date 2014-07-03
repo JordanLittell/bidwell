@@ -49,7 +49,7 @@
 		//================       EXECUTE QUERY WITH PARAMS   ========================
 		//PARAMETERS:	sUnitName  ,dcWidth  ,dcLength ,".$rent_param." ,bPower  ,bClimate  bAlarm,  bRent
 		try{	
-			$results = $db->query("SELECT * FROM UNITS WHERE dcWidth=".$width." AND dcLength=".$length." AND bRented=\"FALSE\"");
+			$results = $db->query("SELECT * FROM UNITS WHERE dcWidth=".$width." AND dcLength=".$length." AND bRented=\"TRUE\"");
 			// $results->bindParam(0,$width);
 			// $results->bindParam(1,$length);
 			$data = $results->fetchAll();

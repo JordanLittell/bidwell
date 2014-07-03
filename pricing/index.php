@@ -81,21 +81,21 @@
 			</tr>
 			<?php     } ?>
 		</table>
-
-	</section>
+		<h3>Please call to confirm the price and/or reserve:</h3>
+	
 <?php } else {?>
 	<section>
 		 
 			<?php if (count(available_units())!=0) { ?>
 				<h3>We could not find any matches. Here are the <?php count(available_units());?> units we have avialable:</h3><br><br>
 			<?php } else {?>
-				There are no units available at this time. There could be openings at any time. <br>Try Calling us:<br><div id="phone"><a href="tel:5308932109"><img src="<?php echo BASE_URL;?>img/phone.svg" class="icon"></a></div>
+				There are no units available at this time. There could be openings at any time. <br>Try Calling us:<br>
 				<?php }?>
 		
-	</section>
+	
 	<?php }?>
-	
-	
+	<div id="phone"><a href="tel:5308932109"><img src="<?php echo BASE_URL;?>img/phone.svg" class="icon"></a></div>
+	</section>
 <?php 
 // print_r(error_get_last());
 	include("../partials/footer.php");
