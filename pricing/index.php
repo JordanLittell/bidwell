@@ -18,7 +18,7 @@
 	<section>
 		<form id="unit_form" method="GET">
 			<fieldset>
-				<label for="length">Select Length:</label><br>
+				<label for="length">Select Storage Length:</label><br>
 				<select name="length" form="unit_form" id="length">
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -34,7 +34,7 @@
 					<option value="12">12</option>
 				</select>
 				<br><br>
-				<label for="width">Select Width:</label><br>
+				<label for="width">Select Storage Width:</label><br>
 				<select name="width" form="unit_form" id="width">
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -89,7 +89,7 @@
 			<?php if (count(available_units())!=0) { ?>
 				<h3>We could not find any matches. Here are the <?php count(available_units());?> units we have avialable:</h3><br><br>
 			<?php } else {?>
-				There are no units available at this time.
+				There are no units available at this time. There could be openings at any time. <br>Try Calling us:<br><div id="phone"><a href="tel:5308932109"><img src="<?php echo BASE_URL;?>img/phone.svg" class="icon"></a></div>
 				<?php }?>
 		
 	</section>
@@ -97,7 +97,7 @@
 	
 	
 <?php 
-print_r(error_get_last());
+// print_r(error_get_last());
 	include("../partials/footer.php");
 	
 ?>

@@ -12,4 +12,10 @@
 		echo "could not connect to db";
 		exit;
 	}
-?>
+	try{
+		$results = $db->query("SELECT sUnitName,iFloor,dcWidth,dcLength,dcStdRate,dcStdWeeklyRate,bPower,bClimate,bAlarm,bRentable,bRented FROM UNITS");
+		$data = $results->fetchAll();
+	}	catch(Exception $e){
+		echo "could not query the database";
+		exit;
+	}
