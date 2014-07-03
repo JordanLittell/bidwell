@@ -1,6 +1,7 @@
 <?php
 function get_data(){
-//CONNECT TO DATABASE AND EXTRACT
+//parameters: NONE
+//returns: PDOResponse object
 
 	try{
 
@@ -20,5 +21,4 @@ function get_data(){
 		return "could not query the database";
 	}
 	return $data;
-
 }

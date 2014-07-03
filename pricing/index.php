@@ -1,15 +1,15 @@
 <?php 
 	include("model.php");
 	include("view.php");
+
 	include("../partials/header.php"); 
-	$num_results =0;
 	if (strlen($_SERVER["QUERY_STRING"])>0){
-		
+		$request_sent= true;
 		$length = $_GET["length"];
 		$width=$_GET["width"];
 		$rent_type=$_GET["rent_type"];
 		$db = search($length,$width,$rent_type);
-		$num_results= count($db);	
+		$num_results= count($db);
 	}
 ?>
 
@@ -61,20 +61,15 @@
 		</form>
 	</section>
 
-	<?php if ($num_results>0) { ?>
+	<?php if ($request_sent&&$num_results>0) { ?>
 	<section id = "form-results">
 		<?php display_results($width,$length,$db,$rent_type); ?>
-<?php } else {?>
-	<section>
-		 
-			<?php if (count(available_units())!=0) { ?>
-				<h3>We could not find any matches. Here are the <?php count(available_units());?> units we have avialable:</h3><br><br>
-			<?php } else {?>
-				There are no units available at this time. There could be openings at any time. <br>Try Calling us:<br>
-				<?php }?>
-		
-	
-	<?php }?>
+<?php } elseif($request_sent&&$num_results==0) {
+
+	display_error();
+
+	 }?>
+
 	<div id="phone"><a href="tel:5308932109"><img src="<?php echo BASE_URL;?>img/phone.svg" class="icon"></a></div>
 	</section>
 <?php 
