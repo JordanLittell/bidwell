@@ -5,6 +5,27 @@
 	//'sql5c2b.megasqlservers.com','bidwellsel413306','cikXF%24'
 	//have try-catch block for each point of interaction, use when interacting with external object
 
+	function available_units(){
+		try{
+		$db = new PDO("mysql:host=localhost;dbname=UNITS;port=8889","root","root");
+		$db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+		$db->exec("SET NAMES utf8");
+
+		}	catch(Exception $e){
+			echo "could not connect to db";
+			exit;
+		}
+		try{
+			$results = $db->query("SELECT * FROM UNITS WHERE bRented=\"FALSE\"");
+			// $results->bindParam(0,$width);
+			// $results->bindParam(1,$length);
+			$data = $results->fetchAll();
+		}	catch(Exception $e){
+			echo "could not query the database";
+			exit;
+		}
+		return $data;
+	}
 
 	function search($length,$width,$rent_type){
 		/*returns the units that match the users specifications or returns errors if none are found*/
@@ -27,9 +48,8 @@
 		}
 		//================       EXECUTE QUERY WITH PARAMS   ========================
 		//PARAMETERS:	sUnitName  ,dcWidth  ,dcLength ,".$rent_param." ,bPower  ,bClimate  bAlarm,  bRent
-		try{
-			
-			$results = $db->query("SELECT * FROM UNITS WHERE dcWidth=".$width." AND dcLength=".$length);
+		try{	
+			$results = $db->query("SELECT * FROM UNITS WHERE dcWidth=".$width." AND dcLength=".$length." AND bRented=\"FALSE\"");
 			// $results->bindParam(0,$width);
 			// $results->bindParam(1,$length);
 			$data = $results->fetchAll();

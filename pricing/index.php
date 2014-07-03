@@ -1,16 +1,14 @@
 <?php 
 	
 	include("../partials/header.php"); 
-	
+	$num_results =0;
 	if (strlen($_SERVER["QUERY_STRING"])>0){
 		include("model.php");
 		$length = $_GET["length"];
 		$width=$_GET["width"];
 		$rent_type=$_GET["rent_type"];
-		$db = search($length,$width);
-		$num_results= count($db_entries);
-		
-
+		$db = search($length,$width,$rent_type);
+		$num_results= count($db);	
 	}
 ?>
 
@@ -51,7 +49,7 @@
 					<option value="11">11</option>
 					<option value="12">12</option>
 				</select><br><br>
-				<label for="rent_type">Select Period of Rental:</label><br>
+				<label for="rent_type">Select Billing Plan:</label><br>
 				<select name="rent_type" id="rent_type">
 					<option value="monthly">monthly</option>
 					<option value="weekly">weekly</option>
@@ -61,14 +59,13 @@
 			</fieldset>
 		</form>
 	</section>
-<?php if (strlen($_SERVER["QUERY_STRING"])>0) { ?>
+<?php if ($num_results>0) { ?>
 	<section id = "form-results">
 		<h3>We found some matches!</h3><br><br>
 		<table id="pricing-table">
 			<tr>
 				<th>Unit</th>
 				<th>Price</th>
-				<th>Available</th>
 			</tr>
 			<?php foreach($db as $result){ ?>
 			<tr>
@@ -81,21 +78,27 @@
 				<td>$<?php echo $result[7]?>/wk</td>
 				<?php } ?>
 
-				<?php if ($result[13]=="TRUE"){?>
-				<td><?php echo "NO";?></td>
-				<?php } else { ?>
-				<td><?php echo "YES";?></td>
-				<?php } ?>
 			</tr>
 			<?php     } ?>
 		</table>
 
 	</section>
 <?php } else {?>
-	<h3>Sorry. No such units are available.</h3>
+	<section>
+		 
+			<?php if (count(available_units())!=0) { ?>
+				<h3>We could not find any matches. Here are the <?php count(available_units());?> units we have avialable:</h3><br><br>
+			<?php } else {?>
+				There are no units available at this time.
+				<?php }?>
+		
+	</section>
 	<?php }?>
 	
 	
-<?php include("../partials/footer.php");
+<?php 
+print_r(error_get_last());
+	include("../partials/footer.php");
+	
 ?>
 
