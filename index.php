@@ -1,7 +1,7 @@
 
 <?php include("partials/header.php");?>
 	<div class="col_12" id="banner">
-		<div id="banner-text">BIDWELL <span class="mobile" id="mobile-inline-text">SELF STORAGE</span> <span id="title-text" class="mobile-no">AFFORDABLE, SECURE, CONVENIENT</span>
+		<div id="banner-text">BIDWELL <span class="mobile" id="mobile-inline-text"> STORAGE</span> <span id="title-text" class="mobile-no">AFFORDABLE, SECURE, CONVENIENT</span>
 		</div>
 	</div>
 	<div id="feature-image">

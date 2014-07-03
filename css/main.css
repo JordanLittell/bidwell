@@ -701,6 +701,11 @@ a{
   text-align: center;
   margin-left: 10%;
   max-width: 100px;
+  border-bottom: 1px solid black;
+}
+#pricing-table tr:nth-child(1n+2):hover{
+  background-color: #33CCFF;
+  cursor: pointer;
 }
 .icon{
   padding: 30px;

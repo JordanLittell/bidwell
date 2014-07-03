@@ -1,6 +1,7 @@
 <?php
-
+function get_data(){
 //CONNECT TO DATABASE AND EXTRACT
+
 	try{
 
 		$db = new PDO("mysql:host=localhost;dbname=UNITS;port=8889","root","root");
@@ -9,13 +10,15 @@
 		
 
 	}	catch(Exception $e){
-		echo "could not connect to db";
-		exit;
+		return "could not connect to db";
 	}
 	try{
 		$results = $db->query("SELECT sUnitName,iFloor,dcWidth,dcLength,dcStdRate,dcStdWeeklyRate,bPower,bClimate,bAlarm,bRentable,bRented FROM UNITS");
 		$data = $results->fetchAll();
+	
 	}	catch(Exception $e){
-		echo "could not query the database";
-		exit;
+		return "could not query the database";
 	}
+	return $data;
+
+}

@@ -1,9 +1,10 @@
 <?php 
-	
+	include("model.php");
+	include("view.php");
 	include("../partials/header.php"); 
 	$num_results =0;
 	if (strlen($_SERVER["QUERY_STRING"])>0){
-		include("model.php");
+		
 		$length = $_GET["length"];
 		$width=$_GET["width"];
 		$rent_type=$_GET["rent_type"];
@@ -59,30 +60,10 @@
 			</fieldset>
 		</form>
 	</section>
-<?php if ($num_results>0) { ?>
+
+	<?php if ($num_results>0) { ?>
 	<section id = "form-results">
-		<h3>We found some matches!</h3><br><br>
-		<table id="pricing-table">
-			<tr>
-				<th>Unit</th>
-				<th>Price</th>
-			</tr>
-			<?php foreach($db as $result){ ?>
-			<tr>
-				<td><?php echo $result[0]?></td>
-
-				<?php if ($rent_type=="monthly"){ ?>
-				<td>$<?php echo $result[6]?>/mo</td>
-				<?php } else 	{?>
-
-				<td>$<?php echo $result[7]?>/wk</td>
-				<?php } ?>
-
-			</tr>
-			<?php     } ?>
-		</table>
-		<h3>Please call to confirm the price and/or reserve:</h3>
-	
+		<?php display_results($width,$length,$db,$rent_type); ?>
 <?php } else {?>
 	<section>
 		 
