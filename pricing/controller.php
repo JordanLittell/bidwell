@@ -1,10 +1,10 @@
 <?php 
-
-	function process_request($_GET){	
+require_once("model.php");
+	function process_request($length_param,$width_param,$rent_type_param,$db){	
 			$request_sent=true;
-			$length = $_GET["length"];
-			$width=$_GET["width"];
-			$rent_type=$_GET["rent_type"];
+			$length = $length_param;
+			$width=$width_param;
+			$rent_type=$rent_type_param;
 			$db = search($length,$width,$rent_type);
-			$num_results= count($db);	
+			return $db;	
 	}	

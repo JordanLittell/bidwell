@@ -1,21 +1,18 @@
 <?php 
 	include("model.php");
 	include("view.php");
+	include("controller.php");
 
 	include("../partials/header.php"); 
 	if (strlen($_SERVER["QUERY_STRING"])>0){
-		$request_sent= true;
-		$length = $_GET["length"];
-		$width=$_GET["width"];
-		$rent_type=$_GET["rent_type"];
-		$db = search($length,$width,$rent_type);
-		$num_results= count($db);
+		$db = process_request($_GET["length"],$_GET["width"],$_GET["rent_type"]);
+		$num_results = count($db);
+		$request_sent=true;
 	}
-
-?>
+	;?>
 
 	<section>
-		<h1>Pricing Inquiry</h1>
+		<h1>Search For Prices and Units</h1>
 	</section>
 	<section>
 		<form id="unit_form" method="GET">
@@ -50,6 +47,6 @@
 
 	 }?>
 
-	<div id="phone"><a href="tel:5308932109"><img src="<?php echo BASE_URL;?>img/phone.svg" class="icon"></a></div>
+	
 	</section>
 <?php include("../partials/footer.php");?>

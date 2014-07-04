@@ -37,14 +37,18 @@
 
 <?php function display_length_options(){
 	$lengths = get_dimensions()[0];
-	foreach ($lengths as $length ) {?>
+	foreach ($lengths as $length) {
+		if ($length[0]!=0){?>
 		<option value="<?php echo $length[0];?>"><?php echo $length[0];?></option>
-	<?php } 
+	<?php }
+	} 
 } ?>
 <?php function display_width_options(){
 	$widths = get_dimensions()[1];
-	foreach ($widths as $width ) {?>
+	foreach ($widths as $width) {
+		if ($width[0]!=0){?>
 		<option value="<?php echo $width[0];?>"><?php echo $width[0];?></option>
-	<?php } 
+	<?php }
+	} 
 } ?>
 
