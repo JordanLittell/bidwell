@@ -24,7 +24,7 @@
 		//send ajax get request to the controller code
 
 			var showLengths = function(data){
-		      $.get("/",{'width':data},function(data){
+		      $.get("<?php echo BASE_URL;?>pricing/controller.php",{'width':data}).done(function(data){
 		        $("#lengths").html(data);
 		      });
 
@@ -39,9 +39,8 @@
 
 				<label for="length" id="length">Select Storage Length:</label><br>
 
-				<select name="length" form="unit_form" id="length">
-
-					<?php display_length_options();?>
+				
+					<div id ="lengths"></div>
 				</select>
 				<br><br>
 				

@@ -41,14 +41,19 @@
 	}?>
 
 
-<?php function display_length_options($lengths){
-	
+<?php function display_length_options($lengths){?>
+
+	<select name="length" form="unit_form" id="length">
+<?php
 	foreach ($lengths as $length) {
 		if ($length[0]!=0){?>
 		<option value="<?php echo $length[0];?>"><?php echo $length[0];?></option>
 	<?php }
-	} 
-} ?>
+	
+	}?>
+	</select>
+
+<?php  } ?>
 <?php function display_width_options($widths){
 	$widths = get_dimensions()[1];
 	foreach ($widths as $width) {

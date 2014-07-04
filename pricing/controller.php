@@ -12,15 +12,21 @@
 			return $results;	
 	}	
 
-	echo "function compile";
+
+	if (strlen($_SERVER["QUERY_STRING"])>0){
 		$width = $_GET["width"];
-		echo "<pre>";
-		$lengths = get_lengths($width)[0];
-		var_dump($lengths[0][0]);
-		$display_length_options($lengths[0]);
-		echo "view code ran";
-		
+		$lengths = get_lengths($width)[0];?>
+
+		<select name="length" form="unit_form" id="length">
+<?php
+	foreach ($lengths as $length) {
+		if ($length[0]!=0){?>
+		<option value="<?php echo $length[0];?>"><?php echo $length[0];?></option>
+	<?php }
 	
+	}?>
+	</select>
+<?php }?>
 
 	
 
