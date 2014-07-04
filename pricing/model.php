@@ -42,9 +42,9 @@
 			exit;
 		}
 		return $data;
+	}
 
-
-	function get_available_dimensions(){
+	function get_dimensions(){
 		$db = get_data();
 		var_dump($db);
 		try{		

@@ -34,3 +34,17 @@
 
 	}?>
 
+
+<?php function display_length_options(){
+	$lengths = get_dimensions()[0];
+	foreach ($lengths as $length ) {?>
+		<option value="<?php echo $length[0];?>"><?php echo $length[0];?></option>
+	<?php } 
+} ?>
+<?php function display_width_options(){
+	$widths = get_dimensions()[1];
+	foreach ($widths as $width ) {?>
+		<option value="<?php echo $width[0];?>"><?php echo $width[0];?></option>
+	<?php } 
+} ?>
+
