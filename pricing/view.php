@@ -1,7 +1,7 @@
 
 <?php function display_results($width,$length,$db,$rent_type) {?>
 
-<h3>We found some matches for a <?php echo $width;?>x<?php echo $length;?> unit!</h3><br><br>
+<h3>We found some matches for a <?php echo($width);?> x <?php echo($length);?> unit!</h3><br><br>
 
  	<table id="pricing-table">	
 		<tr>

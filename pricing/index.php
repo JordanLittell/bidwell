@@ -5,9 +5,14 @@
 
 	include("../partials/header.php"); 
 	if (strlen($_SERVER["QUERY_STRING"])>0){
-		$db = process_request($_GET["length"],$_GET["width"],$_GET["rent_type"]);
+		$result_response = process_request($_GET["length"],$_GET["width"],$_GET["rent_type"]);
+		//make this a hash so you can access the values with a string
+		$db = $result_response[0];
 		$num_results = count($db);
 		$request_sent=true;
+		$width = $result_response[1];
+		$length=$result_response[2];
+		$rent_type=$result_response[3];
 	}
 	;?>
 
@@ -40,13 +45,16 @@
 
 	<?php if ($request_sent&&$num_results>0) { ?>
 	<section id = "form-results">
-		<?php display_results($width,$length,$db,$rent_type); ?>
+		<?php 
+
+		display_results($width,$length,$db,$rent_type); 
+
+		?>
 <?php } elseif($request_sent&&$num_results==0) {
 
 	display_error();
 
 	 }?>
 
-	
 	</section>
 <?php include("../partials/footer.php");?>

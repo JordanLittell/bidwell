@@ -6,5 +6,7 @@ require_once("model.php");
 			$width=$width_param;
 			$rent_type=$rent_type_param;
 			$db = search($length,$width,$rent_type);
-			return $db;	
+			$results= [$db,$width,$length,$rent_type];
+			$num_results= count($db);
+			return $results;	
 	}	
