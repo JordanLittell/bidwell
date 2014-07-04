@@ -22,6 +22,7 @@
 		/*returns the units that match the users specifications or returns errors if none are found*/
 		//========     CONNECT TO DATABASE ========
 		$db = get_data();
+
 		if($rent_type=="monthly"){
 			$rent_param="dcStdRate";
 		}
@@ -46,13 +47,13 @@
 
 	function get_dimensions(){
 		$db = get_data();
-		var_dump($db);
 		try{		
 			$width_query = $db->query("SELECT DISTINCT dcWidth FROM UNITS ORDER BY dcWidth ASC");
 			$widths = $width_query->fetchAll();
 		}	catch(Exception $e){
 			echo "could not get dimensions";
 		}
+		//violation of DRY principle, try to bring up a level of abstraction
 		try{		
 			$length_query = $db->query("SELECT DISTINCT dcWidth FROM UNITS ORDER BY dcWidth ASC");
 			$lengths = $length_query->fetchAll();
@@ -60,6 +61,30 @@
 			echo "could not get dimensions";
 		}
 		return [$widths,$lengths];
+	}
+	function get_widths($length){
+		$db = get_data();
+		try{		
+			$widths_query = $db->prepare("SELECT DISTINCT dcWidth FROM UNITS WHERE dcLength = ? ORDER BY dcWidth ASC");
+			$widths_query->bindParam(1,$length);
+			$widths_query->execute();
+			$widths = $widths_query->fetchAll();
+		}	catch(Exception $e){
+			echo "could not get dimensions";
+		}
+		return $widths;
+	}
+	function get_lengths($width){
+		$db = get_data();
+		try{		
+			$lengths_query = $db->prepare("SELECT DISTINCT dcLength FROM UNITS WHERE dcWidth = ? ORDER BY dcWidth ASC");
+			$lengths_query->bindParam(1,$width);
+			$lengths_query->execute();
+			$lengths = $lengths_query->fetchAll();
+		}	catch(Exception $e){
+			echo "could not get dimensions";
+		}
+		return $lengths;
 	}
 
 

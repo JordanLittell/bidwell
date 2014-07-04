@@ -2,7 +2,6 @@
 function get_data(){
 //parameters: NONE
 //returns: PDOResponse object
-
 	try{
 
 		$db = new PDO("mysql:host=localhost;dbname=UNITS;port=8889","root","root");

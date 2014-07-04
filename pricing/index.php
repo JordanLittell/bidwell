@@ -14,20 +14,33 @@
 		$length=$result_response[2];
 		$rent_type=$result_response[3];
 	}
-	;?>
+	?>
 
 	<section>
 		<h1>Search For Prices and Units</h1>
 	</section>
 	<section>
+		<script type="text/javascript">
+		//send ajax get request to the controller code
+
+			var showLengths = function(data){
+		      $.get("/",{'width':data},function(data){
+		        $("#lengths").html(data);
+		      });
+
+		    }
+		</script>
 		<form id="unit_form" method="GET">
 			<fieldset>
-				<label for="width">Select Storage Width:</label><br>
-				<select name="width" form="unit_form" id="width">
+				<label for="width" id="width">Select Storage Width:</label><br>
+				<select name="width" form="unit_form" id="width" onChange="showLengths(this.value)">
 					<?php display_width_options();?>
 				</select><br><br>
-				<label for="length">Select Storage Length:</label><br>
+
+				<label for="length" id="length">Select Storage Length:</label><br>
+
 				<select name="length" form="unit_form" id="length">
+
 					<?php display_length_options();?>
 				</select>
 				<br><br>

@@ -1,5 +1,10 @@
 
-<?php function display_results($width,$length,$db,$rent_type) {?>
+<?php 
+	//stil need to add code for pagination and incorporate AJAX for to dynamically update the form
+	
+
+
+	function display_results($width,$length,$db,$rent_type) {?>
 
 <h3>We found some matches for a <?php echo($width);?> x <?php echo($length);?> unit!</h3><br><br>
 
@@ -30,20 +35,21 @@
 	?>
 	<section>
 		<?php 
+		//Let the user know when the unit is available.
 	echo "We have no more units available in that size. Call us if you have any questions";
 
 	}?>
 
 
-<?php function display_length_options(){
-	$lengths = get_dimensions()[0];
+<?php function display_length_options($lengths){
+	
 	foreach ($lengths as $length) {
 		if ($length[0]!=0){?>
 		<option value="<?php echo $length[0];?>"><?php echo $length[0];?></option>
 	<?php }
 	} 
 } ?>
-<?php function display_width_options(){
+<?php function display_width_options($widths){
 	$widths = get_dimensions()[1];
 	foreach ($widths as $width) {
 		if ($width[0]!=0){?>
