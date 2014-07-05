@@ -50,7 +50,7 @@
 
 <?php function display_lengths($lengths){?>
 		<label for="length" >Select Storage Length:</label><br>
-		<select name="length" form="unit_form" id="length" onChange="$('#billing_options').fadeIn('slow');">
+		<select name="length" form="unit_form" id="length" onChange="$('#billing_options').fadeIn('slow');scroll_to('#billing_options')">
 <?php
 	foreach ($lengths as $length) {
 		if ($length[0]!=0){?>

@@ -12,8 +12,7 @@
 			return $results;	
 	}	
 
-
-	if (strlen($_SERVER["QUERY_STRING"])>0){
+	if (isset($_GET["width"])&&!empty($_GET["width"])&&!isset($_GET["length"])){
 		$width = $_GET["width"];
 		$lengths = get_lengths($width);
 		echo(display_lengths($lengths));

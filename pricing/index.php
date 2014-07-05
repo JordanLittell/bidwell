@@ -2,8 +2,9 @@
 	include("model.php");
 	include("view.php");
 	include("controller.php");
-
 	include("../partials/header.php"); 
+
+
 	if (strlen($_SERVER["QUERY_STRING"])>0){
 		$result_response = process_request($_GET["length"],$_GET["width"],$_GET["rent_type"]);
 		//make this a hash so you can access the values with a string
@@ -15,31 +16,33 @@
 		$rent_type=$result_response[3];
 	}
 	?>
-
 	<section>
 		<h1>Search For Prices and Units</h1>
 	</section>
 	<section>
 		<script type="text/javascript">
 		//send ajax get request to the controller code
-
+			function scroll_to(div){
+			    $('html, body').animate({
+			        scrollTop: $(div).offset().top
+			    },1000);
+			}
 			var showLengths = function(data){
 		      $.get("<?php echo BASE_URL;?>pricing/controller.php",{'width':data}).done(function(data){
 		        $("#lengths").html(data);
 		        $("#lengths").fadeIn("slow");
+		        scroll_to("#lengths");
 		      });
 		    }
+
+		    
 		</script>
-		<form id="unit_form" method="GET">
+		<form id="unit_form" onSubmit="fetch_units();">
 			<fieldset>
 				<label for="width" id="width">Select Storage Width:</label><br>
-				<select name="width" form="unit_form" id="width" onChange="showLengths(this.value)">
+				<select name="width" form="unit_form" id="width" onChange="showLengths(this.value);">
 					<?php display_width_options();?>
 				</select><br><br>
-
-				
-
-				
 					<div id ="lengths"></div>
 				</select>
 				<br><br>
@@ -57,19 +60,13 @@
 			</fieldset>
 		</form>
 	</section>
-
 	<?php if ($request_sent&&$num_results>0) { ?>
 	<section id = "form-results">
 		<?php 
-
 		display_results($width,$length,$db,$rent_type); 
-
 		?>
-<?php } elseif($request_sent&&$num_results==0) {
-
-	display_error();
-
-	 }?>
-
+		<?php } elseif($request_sent&&$num_results==0) {
+			display_error();
+	 	}?>
 	</section>
 <?php include("../partials/footer.php");?>
