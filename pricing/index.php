@@ -26,8 +26,11 @@
 			var showLengths = function(data){
 		      $.get("<?php echo BASE_URL;?>pricing/controller.php",{'width':data}).done(function(data){
 		        $("#lengths").html(data);
+		        $("#lengths").fadeIn("slow");
 		      });
-
+		    var displayBilling=function(){
+		    	$("#billing_options").fadeIn("slow");
+		    }
 		    }
 		</script>
 		<form id="unit_form" method="GET">
@@ -37,18 +40,22 @@
 					<?php display_width_options();?>
 				</select><br><br>
 
-				<label for="length" id="length">Select Storage Length:</label><br>
+				
 
 				
 					<div id ="lengths"></div>
 				</select>
+				
 				<br><br>
 				
-				<label for="rent_type">Select Billing Plan:</label><br>
-				<select name="rent_type" id="rent_type">
-					<option value="monthly">monthly</option>
-					<option value="weekly">weekly</option>
-				</select>
+				<div id="billing_options">
+					<label for="rent_type">Select Billing Plan:</label><br>
+					<select name="rent_type" id="rent_type">
+						<option value="monthly">monthly</option>
+						<option value="weekly">weekly</option>
+					</select>
+				</div>
+
 				<br><br>
 				<input type="submit">
 			</fieldset>

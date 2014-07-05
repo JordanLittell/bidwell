@@ -39,21 +39,6 @@
 	echo "We have no more units available in that size. Call us if you have any questions";
 
 	}?>
-
-
-<?php function display_length_options($lengths){?>
-
-	<select name="length" form="unit_form" id="length">
-<?php
-	foreach ($lengths as $length) {
-		if ($length[0]!=0){?>
-		<option value="<?php echo $length[0];?>"><?php echo $length[0];?></option>
-	<?php }
-	
-	}?>
-	</select>
-
-<?php  } ?>
 <?php function display_width_options($widths){
 	$widths = get_dimensions()[1];
 	foreach ($widths as $width) {
@@ -62,4 +47,19 @@
 	<?php }
 	} 
 } ?>
+
+<?php function display_lengths($lengths){?>
+		<label for="length" id="length">Select Storage Length:</label><br>
+		<select name="length" form="unit_form" id="length" onChange = "displayBilling()">
+<?php
+	foreach ($lengths as $length) {
+		if ($length[0]!=0){?>
+		<option value="<?php echo $length[0][0];?>"><?php echo($length["dcLength"]);?></option>
+	<?php }
+	
+	}?>
+	</select>
+<?php }?>
+
+
 

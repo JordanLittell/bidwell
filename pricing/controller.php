@@ -15,18 +15,9 @@
 
 	if (strlen($_SERVER["QUERY_STRING"])>0){
 		$width = $_GET["width"];
-		$lengths = get_lengths($width)[0];?>
-
-		<select name="length" form="unit_form" id="length">
-<?php
-	foreach ($lengths as $length) {
-		if ($length[0]!=0){?>
-		<option value="<?php echo $length[0];?>"><?php echo $length[0];?></option>
-	<?php }
-	
+		$lengths = get_lengths($width);
+		echo(display_lengths($lengths));
 	}?>
-	</select>
-<?php }?>
 
 	
 

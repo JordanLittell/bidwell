@@ -77,7 +77,7 @@
 	function get_lengths($width){
 		$db = get_data();
 		try{		
-			$lengths_query = $db->prepare("SELECT DISTINCT dcLength FROM UNITS WHERE dcWidth = ? ORDER BY dcWidth ASC");
+			$lengths_query = $db->prepare("SELECT DISTINCT dcLength FROM UNITS WHERE dcWidth = ? ORDER BY dcLength ASC");
 			$lengths_query->bindParam(1,$width);
 			$lengths_query->execute();
 			$lengths = $lengths_query->fetchAll();

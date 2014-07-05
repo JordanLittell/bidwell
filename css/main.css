@@ -854,7 +854,12 @@ iframe{
 #pricing-table{
   width:100%;
 }
-
+#lengths{
+  display:none;
+}
+#billing_options{
+  display: none;
+}
 #disqus{
   background-color: black;
   color:black;
