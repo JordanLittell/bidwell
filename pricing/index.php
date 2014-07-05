@@ -28,9 +28,6 @@
 		        $("#lengths").html(data);
 		        $("#lengths").fadeIn("slow");
 		      });
-		    var displayBilling=function(){
-		    	$("#billing_options").fadeIn("slow");
-		    }
 		    }
 		</script>
 		<form id="unit_form" method="GET">
@@ -45,19 +42,18 @@
 				
 					<div id ="lengths"></div>
 				</select>
-				
 				<br><br>
 				
 				<div id="billing_options">
 					<label for="rent_type">Select Billing Plan:</label><br>
-					<select name="rent_type" id="rent_type">
+					<select name="rent_type" id="rent_type" onChange="$('#price_button').fadeIn('slow');">
 						<option value="monthly">monthly</option>
 						<option value="weekly">weekly</option>
 					</select>
+					<br><br>
+					<input type="submit">
 				</div>
-
-				<br><br>
-				<input type="submit">
+				
 			</fieldset>
 		</form>
 	</section>

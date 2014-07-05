@@ -49,8 +49,8 @@
 } ?>
 
 <?php function display_lengths($lengths){?>
-		<label for="length" id="length">Select Storage Length:</label><br>
-		<select name="length" form="unit_form" id="length" onChange = "displayBilling()">
+		<label for="length" >Select Storage Length:</label><br>
+		<select name="length" form="unit_form" id="length" onChange="$('#billing_options').fadeIn('slow');">
 <?php
 	foreach ($lengths as $length) {
 		if ($length[0]!=0){?>
