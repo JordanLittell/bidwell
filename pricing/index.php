@@ -22,6 +22,7 @@
 	<section>
 		<script type="text/javascript">
 		//send ajax get request to the controller code
+		$(document).ready(function(){
 			function scroll_to(div){
 			    $('html, body').animate({
 			        scrollTop: $(div).offset().top
@@ -33,11 +34,16 @@
 		        $("#lengths").fadeIn("slow");
 		        scroll_to("#lengths");
 		      });
-		    }
+		    }	
+		   	$("#unit_form").onSubmit(function(event){
+		   		event.preventDefault();
+		   	})
+		});
+			
 
 		    
 		</script>
-		<form id="unit_form" onSubmit="fetch_units();">
+		<form id="unit_form">
 			<fieldset>
 				<label for="width" id="width">Select Storage Width:</label><br>
 				<select name="width" form="unit_form" id="width" onChange="showLengths(this.value);">

@@ -834,9 +834,9 @@ iframe{
 }
 .main-button:hover{
   background-color: #D0D0D0;
-  border-radius: 5px;
+  border-radius: 4px;
   color:white;
-  border: 5px solid #ACACAC;
+  border: 1px solid #ACACAC;
 }
 #phone{
   width: 100%;
