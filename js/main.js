@@ -65,7 +65,37 @@
   $.ajaxSetup({
     cache: true
   });
+
+      function scroll_to(div){
+          $('html, body').animate({
+              scrollTop: $(div).offset().top
+          },1000);
+      }
+      var showLengths = function(data){
+          $.get("/Bidwell3.0/pricing/controller.php",{'width':data}).done(function(data){
+            $("#lengths").html(data);
+            $("#lengths").fadeIn("slow");
+            scroll_to("#lengths");
+          });
+        } 
+        $("#unit_form").submit(function(event){
+          event.preventDefault();
+          var object = {'width':$("#width").value,
+            'length':$("#length").value,
+            'rent_type':$("#rent_type").value
+          }
+          //WATCH OUT HERE!!!! CHANGE THE PATH UPON UPDLOADING VIA FTP CLIENT
+          $.ajax({
+            type:"GET",
+            url:"/Bidwell3.0/pricing/controller.php",
+            data:object
+          }).done(function(data){
+            $("#form-results").html(data);
+          });
+        });
+
   $(document).ready(function(){
+    //send ajax get request to the controller code
     $("#call-us").hover(
       function(){
       $("#fade-in").fadeIn("slow");

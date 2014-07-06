@@ -20,47 +20,16 @@
 		<h1>Search For Prices and Units</h1>
 	</section>
 	<section>
-		<script type="text/javascript">
-		//send ajax get request to the controller code
-		$(document).ready(function(){
-			function scroll_to(div){
-			    $('html, body').animate({
-			        scrollTop: $(div).offset().top
-			    },1000);
-			}
-			var showLengths = function(data){
-		      $.get("<?php echo BASE_URL;?>pricing/controller.php",{'width':data}).done(function(data){
-		        $("#lengths").html(data);
-		        $("#lengths").fadeIn("slow");
-		        scroll_to("#lengths");
-		      });
-		    }	
-		   	$("#unit_form").onSubmit(function(event){
-		   		event.preventDefault();
-		   		$.get("<?php echo BASE_URL;?>pricing/controller.php",
-		   			{'width':$("#width").value(),
-		   			'length':$("#length").value(),
-		   			'rent_type':$("#rent_type").value()
-		   			}
-		   		}).done(function(data)){
-		   			$("#form-results").html(data);
-		   			scroll_to("#form-results");
-		   		}
-		   	});
-		   	
-		});
-			
-
-		    
-		</script>
 		<form id="unit_form">
 			<fieldset>
 				<label for="width" id="width">Select Storage Width:</label><br>
 				<select name="width" form="unit_form" id="width" onChange="showLengths(this.value);">
 					<?php display_width_options();?>
-				</select><br><br>
-					<div id ="lengths"></div>
 				</select>
+				<br><br>
+				
+				<div id ="lengths"></div>
+
 				<br><br>
 				
 				<div id="billing_options">
