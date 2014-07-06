@@ -28,11 +28,22 @@
 				</select>
 				<br><br>
 
-				<div id ="lengths">
+				
 					<label for="length" >Select Storage Length:</label><br>
-					<select name="length" form="unit_form" id="length">
+					<select name="length" form="unit_form" id="length-selector">
+						<option id ="4" value="6">4</option>
+						<option id = "5" value="5">5</option>
+						<option id = "6" value="6">6</option>
+						<option id = "7" value="7">7</option>
+						<option id = "8" value="8">8</option>
+						<option id = "9" value="9">9</option>
+						<option id = "10" value="10">10</option>
+						<option id = "11" value="11">11</option>
+						<option id = "12" value="12">12</option>
+						<option id = "20" value="20">20</option>
+						<option id = "22" value="22">22</option>
 					</select>
-				</div>
+			
 
 				<br><br>
 				

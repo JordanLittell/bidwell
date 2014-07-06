@@ -76,32 +76,34 @@ $(document).ready(function(){
         scrollTop: $(div).offset().top
     },1000);
     }
-    var showLengths = function(data){
-        $.get("/Bidwell3.0/pricing/controller.php",{'width':data}).done(function(data){
-          $("#lengths").html(data);
-          $("#lengths").fadeIn("slow");
+    var showLengths = function(stuff){
+        $.get("/Bidwell3.0/pricing/controller.php",{'width':stuff}).done(function(data){
+          $("#length").html(data);
+          $("#length").fadeIn("slow");
+     
         });
     }
     var width;
     var lengh;
+    var rent_type;
 
-    $("#width").change(function(){
+    $("#width").on('change',function(){
       width = this.value;
-      showLengths(width);
-      
+      showLengths(width); 
     }); 
-    $("#length").change(function(){
+    $("#length-selector").on('change',function(){
       length = this.value;
-     
+      $("#billing_options").fadeIn("slow");
+      scroll_to("#billing_options");
     });
 
-    $("#rent_type").change(function(){
+    $("#rent_type").on('change',function(){
+      rent_type = this.value;
       $('#price_button').fadeIn('slow');
     });
 
     $("#unit_form").submit(function(event){
       event.preventDefault();
-      var rent_type = $("#rent_type").value;
       var object = {'width':width,
         'length':length,
         'rent_type':rent_type

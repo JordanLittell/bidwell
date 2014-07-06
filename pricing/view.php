@@ -4,7 +4,7 @@
 	
 
 
-	function display_results($width,$length,$db,$rent_type) {?>
+function display_results($width,$length,$db,$rent_type) {?>
 
 <h3>We found some matches for a <?php echo($width);?> x <?php echo($length);?> unit!</h3><br><br>
 
@@ -49,17 +49,16 @@
 } ?>
 
 <?php function display_lengths($lengths){?>
-		<label for="length" >Select Storage Length:</label><br>
-		<select name="length" form="unit_form" id="length">
+		
 <?php
 	foreach ($lengths as $length) {
 		if ($length["dcLength"]!=0){?>
 		<option value="<?php echo $length['dcLength'];?>"><?php echo($length["dcLength"]);?></option>
 	<?php }
 	
-	}?>
-	</select>
-<?php }?>
+	}
+}?>
+
 
 
 
