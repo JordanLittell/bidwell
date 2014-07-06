@@ -37,7 +37,17 @@
 		    }	
 		   	$("#unit_form").onSubmit(function(event){
 		   		event.preventDefault();
-		   	})
+		   		$.get("<?php echo BASE_URL;?>pricing/controller.php",
+		   			{'width':$("#width").value(),
+		   			'length':$("#length").value(),
+		   			'rent_type':$("#rent_type").value()
+		   			}
+		   		}).done(function(data)){
+		   			$("#form-results").html(data);
+		   			scroll_to("#form-results");
+		   		}
+		   	});
+		   	
 		});
 			
 
