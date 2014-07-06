@@ -42,19 +42,19 @@
 <?php function display_width_options($widths){
 	$widths = get_dimensions()[1];
 	foreach ($widths as $width) {
-		if ($width[0]!=0){?>
-		<option value="<?php echo $width[0];?>"><?php echo $width[0];?></option>
+		if ($width["dcWidth"]!=0){?>
+		<option value="<?php echo $width['dcWidth'];?>"><?php echo $width["dcWidth"];?></option>
 	<?php }
 	} 
 } ?>
 
 <?php function display_lengths($lengths){?>
 		<label for="length" >Select Storage Length:</label><br>
-		<select name="length" form="unit_form" id="length" onChange="$('#billing_options').fadeIn('slow');scroll_to('#billing_options')">
+		<select name="length" form="unit_form" id="length">
 <?php
 	foreach ($lengths as $length) {
-		if ($length[0]!=0){?>
-		<option value="<?php echo $length[0][0];?>"><?php echo($length["dcLength"]);?></option>
+		if ($length["dcLength"]!=0){?>
+		<option value="<?php echo $length['dcLength'];?>"><?php echo($length["dcLength"]);?></option>
 	<?php }
 	
 	}?>

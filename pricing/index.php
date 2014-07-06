@@ -22,19 +22,23 @@
 	<section>
 		<form id="unit_form">
 			<fieldset>
-				<label for="width" id="width">Select Storage Width:</label><br>
-				<select name="width" form="unit_form" id="width" onChange="showLengths(this.value);">
+				<label for="width">Select Storage Width:</label><br>
+				<select name="width" form="unit_form" id="width">
 					<?php display_width_options();?>
 				</select>
 				<br><br>
-				
-				<div id ="lengths"></div>
+
+				<div id ="lengths">
+					<label for="length" >Select Storage Length:</label><br>
+					<select name="length" form="unit_form" id="length">
+					</select>
+				</div>
 
 				<br><br>
 				
 				<div id="billing_options">
 					<label for="rent_type">Select Billing Plan:</label><br>
-					<select name="rent_type" id="rent_type" onChange="$('#price_button').fadeIn('slow');">
+					<select name="rent_type" id="rent_type" >
 						<option value="monthly">monthly</option>
 						<option value="weekly">weekly</option>
 					</select>
