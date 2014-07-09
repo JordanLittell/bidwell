@@ -3,8 +3,9 @@
 	//stil need to add code for pagination and incorporate AJAX for to dynamically update the form
 	
 
-
-function display_results($width,$length,$db,$rent_type) {?>
+function display_results($width,$length,$db,$rent_type) {
+	if(!empty($db) && !empty($width) && !empty($length)){
+	?>
 
 <h3>We found some matches for a <?php echo($width);?> x <?php echo($length);?> unit!</h3><br><br>
 
@@ -29,16 +30,14 @@ function display_results($width,$length,$db,$rent_type) {?>
 		<?php     } ?>
 	</table>
 	<h3>Please call to confirm the price and/or reserve:</h3>
-	<?php }?>
-
-<?php function display_error(){
+	<?php }
+	else{
+		echo "We could not find any matches.";
+	}
+}
 	?>
-	<section>
-		<?php 
-		//Let the user know when the unit is available.
-	echo "We have no more units available in that size. Call us if you have any questions";
 
-	}?>
+
 <?php function display_width_options($widths){
 	$widths = get_dimensions()[1];
 	foreach ($widths as $width) {
