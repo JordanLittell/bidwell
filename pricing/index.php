@@ -60,13 +60,7 @@
 			</fieldset>
 		</form>
 	</section>
-	<?php if ($request_sent&&$num_results>0) { ?>
 	<section id = "form-results">
-		<?php 
-		display_results($width,$length,$db,$rent_type); 
-		?>
-		<?php } elseif($request_sent&&$num_results==0) {
-			display_error();
-	 	}?>
+		
 	</section>
 <?php include("../partials/footer.php");?>

@@ -76,8 +76,8 @@ $(document).ready(function(){
         scrollTop: $(div).offset().top
     },1000);
     }
-    var showLengths = function(stuff){
-        $.get("/Bidwell3.0/pricing/controller.php",{'width':stuff}).done(function(data){
+    var showLengths = function(data){
+        $.get("/Bidwell3.0/pricing/controller.php",{'width':data}).done(function(data){
           $("#length").html(data);
           $("#length").fadeIn("slow");
      
