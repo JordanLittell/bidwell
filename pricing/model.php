@@ -20,7 +20,7 @@
 
 	function search($length,$width,$rent_type){
 		/*returns the units that match the users specifications or returns errors if none are found*/
-		//========     CONNECT TO DATABASE ========
+		//==============================     CONNECT TO DATABASE ========
 		$db = get_data();
 
 		if($rent_type=="monthly"){

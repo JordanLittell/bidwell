@@ -86,16 +86,16 @@ $(document).ready(function(){
         scrollTop: $(div).offset().top
     },1000);
     }
-    var showLengths = function(data){
-        $.get("/Bidwell3.0/pricing/controller.php",{'width':data}).done(function(data){
+    var showLengths = function(width){
+        $.get("/Bidwell3.0/pricing/controller.php",{'width':width}).done(function(data){
           $("#length").html(data);
           $("#length").fadeIn("slow");
      
         });
     }
-    var width;
-    var lengh;
-    var rent_type;
+    var width="4";
+    var length="4";
+    var rent_type="monthly"; 
 
     $("#width").on('change',function(){
       width = this.value;
@@ -106,12 +106,10 @@ $(document).ready(function(){
       $("#billing_options").fadeIn("slow");
       scroll_to("#billing_options");
     });
-
     $("#rent_type").on('change',function(){
       rent_type = this.value;
       $('#price_button').fadeIn('slow');
     });
-
     $("#unit_form").submit(function(event){
       event.preventDefault();
       var object = {'width':width,

@@ -42,14 +42,13 @@
 						<option id = "12" value="12">12</option>
 						<option id = "20" value="20">20</option>
 						<option id = "22" value="22">22</option>
+						
 					</select>
-			
-
 				<br><br>
 				
 				<div id="billing_options">
 					<label for="rent_type">Select Billing Plan:</label><br>
-					<select name="rent_type" id="rent_type" >
+					<select name="rent_type" id="rent_type" value="monthly">
 						<option value="monthly">monthly</option>
 						<option value="weekly">weekly</option>
 					</select>

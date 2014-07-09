@@ -4,7 +4,7 @@
 	
 
 function display_results($width,$length,$db,$rent_type) {
-	if(!empty($db) && !empty($width) && !empty($length)){
+	if(!empty($db) && !empty($width) && !empty($length)&& !empty($rent_type)){
 	?>
 
 <h3>We found some matches for a <?php echo($width);?> x <?php echo($length);?> unit!</h3><br><br>
