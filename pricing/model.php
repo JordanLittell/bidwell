@@ -4,9 +4,9 @@
 	//Use PHP PDO to interface with DB
 	//have try-catch block for each point of interaction, use when interacting with external object
 	function available_units(){
-		$db = get_units();
+		$db = get_data();
 		try{
-			$results = $db->query("SELECT * FROM units_info WHERE TotalVacant!=\"FALSE\"");
+			$results = $db->query("SELECT * FROM units_info WHERE TotalVacant!=0");
 			// $results->bindParam(0,$width);
 			// $results->bindParam(1,$length);
 			$data = $results->fetchAll();
@@ -86,5 +86,6 @@
 		}
 		return $lengths;
 	}
+
 
 

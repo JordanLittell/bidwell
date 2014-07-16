@@ -2,8 +2,12 @@
 	require_once("model.php");
 	require_once("view.php");
 
+	function render_available(){
+		$available = available_units();
+		echo display_available_units($available);
+	}
+	
 
-	echo display_available_units();
 	if (isset($_GET["width"])&&!empty($_GET["width"])&&!isset($_GET["length"])){
 		$width = $_GET["width"];
 		$lengths = get_lengths($width);

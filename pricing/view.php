@@ -57,9 +57,24 @@ function display_results($width,$length,$db,$rent_type) {
 	
 	}
 }
-	function display_available_units(){
-		
-	?>
+	function display_available_units($available){?>
+	<table id ="pricing-table">
+		<tr>
+			<th>Length</th>
+			<th>Width</th>
+			<th>Price</th>
+		</tr>
+	<?php
+		foreach($available as $unit){
+	?>	
+		<tr>
+			<td><?php echo $unit['dcWidth'];?></td>
+			<td><?php echo $unit['dcLength'];?></td>
+			<td><?php echo "$".$unit["WeeklyRate"]."/wk";?></td>
+		</tr>
+		<?php } ?>
+	</table>
+<?php } ?>
 
 
 

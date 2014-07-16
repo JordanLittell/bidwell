@@ -1,4 +1,5 @@
 <?php 
+	include("../inc/database.php");
 	include("model.php");
 	include("view.php");
 	include("controller.php");
@@ -17,7 +18,13 @@
 	}
 	
 	?>
+	<section><h1>Available Units:</h1></section>
+	<section><?php render_available();?></section>
 	<section>
+
+
+
+	<?php if (count(available_units(get_data()))>20){;?>
 		<h1>Search For Prices and Units</h1>
 	</section>
 
@@ -65,4 +72,5 @@
 	<section id = "form-results">
 		
 	</section>
+	<?php } ?>
 <?php include("../partials/footer.php");?>

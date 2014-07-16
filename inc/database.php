@@ -1,5 +1,4 @@
 <?php
-echo "hello";
 function get_data(){
 //parameters: NONE
 //returns: PDOResponse object
