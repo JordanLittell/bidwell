@@ -56,7 +56,10 @@ function display_results($width,$length,$db,$rent_type) {
 	<?php }
 	
 	}
-}?>
+}
+	function display_available_units(){
+		
+	?>
 
 
 

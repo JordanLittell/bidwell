@@ -15,10 +15,13 @@
 		$length=$result_response[2];
 		$rent_type=$result_response[3];
 	}
+	
 	?>
 	<section>
 		<h1>Search For Prices and Units</h1>
 	</section>
+
+
 	<section>
 		<form id="unit_form">
 			<fieldset>
