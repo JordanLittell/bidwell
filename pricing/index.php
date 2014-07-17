@@ -1,9 +1,8 @@
 <?php 
+include("../partials/header.php");
 	include("../inc/database.php");
-	include("model.php");
-	include("view.php");
 	include("controller.php");
-	include("../partials/header.php"); 
+	 
 
 
 	if (strlen($_SERVER["QUERY_STRING"])>0){

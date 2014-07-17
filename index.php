@@ -1,5 +1,11 @@
 
-<?php include("partials/header.php");?>
+<?php 
+	include("../inc/database.php");
+	include("model.php");
+	include("view.php");
+	include("controller.php");
+	include("partials/header.php");
+?>
 	<div class="col_12" id="banner">
 		<div id="banner-text">BIDWELL <span class="mobile" id="mobile-inline-text"> STORAGE</span> <span id="title-text" class="mobile-no">AFFORDABLE, SECURE, CONVENIENT</span>
 		</div>
@@ -84,7 +90,9 @@
 		<div class="pannel" id="contact">
 			<img src="img/contact.png" class="feature-icon">
 			<h1>Contact</h1><br>
-		
+			<?php
+				render_available();
+			?>
 			<form>
 				
 				<h3>Via (Smart) Phone</h3>
